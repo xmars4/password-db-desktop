@@ -1,14 +1,19 @@
 {
     "name": "password-db-desktop",
     "version": "1.0.0",
-    "description": "",
+    "description": "Password DB cross-platform desktop application",
     "main": "index.js",
     "scripts": {
-        "start": "electron ."
+        "start": "electron .",
+        "package": "electron-packager .",
+        "build": "electron-packager . password-db-desktop --platform linux --arch x64 --out dist/",
+        "deb64": "electron-installer-debian --src dist/password-db-desktop-linux-x64/ --dest dist/installers/ --arch amd64"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "electron": "^15.3.1"
+        "electron": "^15.3.1",
+        "electron-installer-debian": "^3.1.0",
+        "electron-packager": "^15.4.0"
     }
 }
